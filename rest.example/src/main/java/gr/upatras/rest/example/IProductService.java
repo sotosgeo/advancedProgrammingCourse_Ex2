@@ -30,6 +30,6 @@ public interface IProductService {
 	Void deleteProduct(int id);
 	void sortProductsByName();
 	/**
-	 * Sorts product list by name
+	 * Sorts product list based on the  pname parameter
 	 */
 }
