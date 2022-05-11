@@ -28,4 +28,8 @@ public interface IProductService {
 	 * @param id of product
 	 */
 	Void deleteProduct(int id);
+	void sortProductsByName();
+	/**
+	 * Sorts product list by name
+	 */
 }

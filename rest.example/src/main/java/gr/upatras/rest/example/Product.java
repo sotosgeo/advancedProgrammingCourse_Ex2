@@ -1,4 +1,7 @@
 package gr.upatras.rest.example;
+
+import java.util.Comparator;
+
 /**
  * @author ctranoris
  *
@@ -47,4 +50,16 @@ public class Product {
 		this.price = price;
 		this.noofproduct = noofproduct;
 	}
+	public static Comparator<Product> ProductNameComparator = new Comparator<Product>() {	
+		public int compare(Product p1, Product p2)
+		{
+			String ProductName1 = p1.getPname().toUpperCase();
+			String ProductName2 = p2.getPname().toUpperCase();
+			
+			return ProductName1.compareTo(
+                    ProductName2);
+			
+
+		}
+	};
 }
