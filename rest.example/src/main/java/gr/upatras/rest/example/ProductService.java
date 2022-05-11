@@ -1,5 +1,6 @@
 package gr.upatras.rest.example;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import org.springframework.stereotype.Service;
 /**
@@ -66,4 +67,15 @@ public class ProductService implements IProductService {
 		}
 		return null;
 	}
+	
+	
+	
+	@Override
+	public void sortProductsByName() {
+		products.sort(Product.ProductNameComparator);
+	}
+	
+	
+	
+	
 }

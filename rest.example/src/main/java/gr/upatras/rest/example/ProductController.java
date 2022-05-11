@@ -111,4 +111,23 @@ public class ProductController {
 		Product product = productService.editProduct(body);
 		return new ResponseEntity<Product>( product, HttpStatus.OK);
 	}
+	
+	
+	
+	@ApiOperation(value = "Sorts product list by name", nickname = "sortProductsByName", notes = "This operation sorts the product"
+			+ " list entity by its name value.", response = Product.class )
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Updated", response = Product.class),
+			@ApiResponse(code = 400, message = "Bad Request", response = Error.class),
+			@ApiResponse(code = 401, message = "Unauthorized", response = Error.class),
+			@ApiResponse(code = 403, message = "Forbidden", response = Error.class),
+			@ApiResponse(code = 404, message = "Not Found", response = Error.class),
+			@ApiResponse(code = 405, message = "Method Not allowed", response = Error.class),
+			@ApiResponse(code = 409, message = "Conflict", response = Error.class),
+			@ApiResponse(code = 500, message = "Internal Server Error", response = Error.class) })
+	@RequestMapping(value = "/product/" , produces = { "application/json;charset=utf-8" }, method =
+		RequestMethod.PATCH)
+	public void sortProductsByName() {
+		log.info( String.format( "Will sort products by name" ));
+		productService.sortProductsByName();
+	}
 }
